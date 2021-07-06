@@ -27,7 +27,7 @@
 ## 設計書
 https://app.diagrams.net/?libs=general;uml#G1ANa8KrI6C7rr9x9NvBNtYfz0xtm8jjkx
 
-####機能一覧
+#### 機能一覧
 - ログイン　…deviseを用いる
 - 投稿　…画像,タイトル,紹介文を投稿
 - フォロー機能
