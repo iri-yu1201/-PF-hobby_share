@@ -69,6 +69,7 @@ gem 'refile-mini_magick'
 #レイアウト調整用
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
+gem 'font-awesome-sass', '~> 5.13'
 
 #デバック用
 gem 'pry-rails'
