@@ -1,9 +1,9 @@
-<h2>Log in</h2>
+<h2>ログイン</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_with model: @user, url: user_session_path, local: true do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :ハンドルネーム %><br />
+    <%= f.email_field :name, autofocus: true %>
   </div>
 
   <div class="field">
@@ -19,8 +19,9 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "ログイン", class: "btn btn-success" %>
   </div>
 <% end %>
 
+<%= link_to "新規登録はこちらから", new_user_registration_path, class: "btn btn-primary" %>
 <%= render "users/shared/links" %>
