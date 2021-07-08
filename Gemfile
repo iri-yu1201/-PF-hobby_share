@@ -62,3 +62,18 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+
+gem 'refile', require: "refile/rails", github: 'manfe/refile'
+gem 'refile-mini_magick'
+
+#レイアウト調整用
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+
+#デバック用
+gem 'pry-rails'
+gem 'pry-byebug'
+
+gem 'dotenv-rails'
+
+gem 'rubocop-airbnb'
