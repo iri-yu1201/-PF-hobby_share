@@ -14,7 +14,7 @@
     <header class="shadow-sm">
       <nav class="navbar mavbar-expand-lg navbar-light">
         <div class="container">
-          <a class="logo" href="posts">ほびシェア</a>
+          <p class="logo">ほびシェア</p>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,11 +23,12 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to "マイページ", current_user_path %>
+                <%= link_to "マイページ", current_user %>
               </li>
-              <li class="nav-item">
-                <%= link_to "フォロワーを見る", follows_list_path %>
-              </li>
+              <!--<li class="nav-item">
+                <%#link_to "フォロワーを見る", follows_list_path %>
+              </li>-->
+              <!-- 投稿用のボタンを作る -->
               <li class="nav-item">
                 <%= link_to "投稿する", new_post_path %>
               </li>

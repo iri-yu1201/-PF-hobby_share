@@ -1,0 +1,18 @@
+<h1>ユーザーページ</h1>
+<div>
+  <%= attachment_image_tag @user, :image %>
+  <%= @user.name %>
+  <%= @user.introduction %>
+</div>
+  <%=link_to "編集する", edit_user_path, class: "btn btn-success" %>
+
+
+<% @posts.each do |post| %>
+  <div>
+    <%= post.title %>
+    <%= post.detail %>
+    <%= attachment_image_tag post, :photo, :fill, 200, 150, format:'jpeg' %>
+  </div>
+<% end %>
+
+<%#paginate @post %>

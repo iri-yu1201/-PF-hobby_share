@@ -78,3 +78,5 @@ gem 'pry-byebug'
 gem 'dotenv-rails'
 
 gem 'rubocop-airbnb'
+
+gem 'kaminari','~> 1.2.1'
