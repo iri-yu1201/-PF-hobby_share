@@ -1,0 +1,9 @@
+<h1>投稿</h1>
+
+<%= form_with model: @post, local:true do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :detail %>
+  <%= f.attachment_field :photo %>
+  
+  <%= f.submit "シェアする", class: "btn btn-success" %>
+<% end %>
