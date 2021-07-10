@@ -1,11 +1,15 @@
+<div class="container">
+
 <% @posts.each do |post| %>
   <div>
     <%=link_to post_path(post) do %>
       <%= post.title %>
     <% end %><br>
     <%= post.detail %>
-    <%= attachment_image_tag post, :photo %>
+    <%= attachment_image_tag post, :photo, :fill, 200, 150, format:'jpeg' %>
   </div>
 <% end %>
+
+</div>
 
 <%#paginate @post %>

@@ -1,0 +1,10 @@
+<div>
+  <%= attachment_image_tag @user, :image, :fill, 60, 60, format:'jpeg' %>
+  <%= @post.user.name %>
+</div>
+
+<div>
+  <%= @post.title %>
+  <%= @post.detail %>
+  <%= attachment_image_tag @post, :photo, :fill, 400, 300, format:'jpeg' %>
+</div>
