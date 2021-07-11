@@ -15,7 +15,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <div class="logo">
-            <%= link_to "ほびシェア", posts_path %>
+            <%= link_to "ほびシェア", items_path %>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
               </li>-->
               <!-- 投稿用のボタンを作る -->
               <li class="nav-item">
-                <%= link_to "投稿する", new_post_path %>
+                <%= link_to "投稿する", new_item_path %>
               </li>
               <li class="nav-item">
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>

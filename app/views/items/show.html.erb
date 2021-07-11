@@ -1,0 +1,33 @@
+<div class="container">
+  <div>
+    <%= attachment_image_tag @item.user, :image, :fill, 60, 60, format:'jpeg' %>
+    <%= @item.user.name %>
+  </div>
+  
+  <div>
+    <%= @item.title %>
+    <%= @item.detail %>
+    <%= attachment_image_tag @item, :photo, :fill, 400, 300, format:'jpeg' %>
+  </div>
+  <div>
+    <% if current_user.id == @item.user_id %>
+      <%= link_to "投稿を消す", item_path(@item), method: :delete, class: "btn btn-danger" %>
+    <% end %>
+  </div>
+  
+  <div>
+    <ul>
+      <li class="comment-list">
+        <h4>コメント</h4>
+      </li>
+      <li id="comments_area">
+        <%= render partial: 'item_comments/index', locals: { item_comments: @comments } %>
+      </li>
+    </ul>
+    
+    <div class="comment_form">
+      <p>コメントする</p>
+      <%= render partial: 'item_comments/form', locals: { item_comment: @comment, item: @item } %>
+    </div>
+  </div>
+</div>

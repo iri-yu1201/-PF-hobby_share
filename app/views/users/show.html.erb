@@ -13,13 +13,13 @@
     
   
   <div>
-    <% @posts.each do |post| %>
-      <%= post.title %>
-      <%= post.detail %>
-      <%= attachment_image_tag post, :photo, :fill, 200, 150, format:'jpeg' %>
+    <% @items.each do |item| %>
+      <%= item.title %>
+      <%= item.detail %>
+      <%= attachment_image_tag item, :photo, :fill, 200, 150, format:'jpeg' %>
     <% end %>
   </div>
 
-<%#paginate @post %>
+<%#paginate @item %>
 
 </div>
