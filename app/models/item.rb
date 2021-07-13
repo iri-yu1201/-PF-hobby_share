@@ -6,4 +6,8 @@ class Item < ApplicationRecord
   has_many :item_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  def self.search(keyword)
+    Item.where(["title like? OR detail like?", "%#{keyword}%", "%#{keyword}%"])
+  end
+
 end
