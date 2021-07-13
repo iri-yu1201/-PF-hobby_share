@@ -1,9 +1,9 @@
 <div class="container">
   <div>
-    <%= attachment_image_tag @item.user, :image, :fill, 60, 60, format:'jpeg' %>
+    <%= attachment_image_tag @item.user, :image, :fill, 100, 100, format:'jpeg', fallback: "no_image.jpg" %>
     <%= @item.user.name %>
   </div>
-  
+
   <div>
     <%= @item.title %>
     <%= @item.detail %>
@@ -14,7 +14,7 @@
       <%= link_to "投稿を消す", item_path(@item), method: :delete, class: "btn btn-danger" %>
     <% end %>
   </div>
-  
+
   <div>
     <ul>
       <li class="comment-list">
@@ -24,10 +24,16 @@
         <%= render partial: 'item_comments/index', locals: { item_comments: @comments } %>
       </li>
     </ul>
-    
-    <div class="comment_form">
-      <p>コメントする</p>
-      <%= render partial: 'item_comments/form', locals: { item_comment: @comment, item: @item } %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="comment_form">
+        <p>コメントする</p>
+        <%= render partial: 'item_comments/form', locals: { item_comment: @comment, item: @item } %>
+      </div>
+    <% end %>
   </div>
+
+  <div id="favorite_button_<%= @item.id %>">
+    <%= render partial: 'favorites/like', locals: { item: @item } %>
+  </div>
+
 </div>
