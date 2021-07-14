@@ -3,7 +3,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @items = @user.items
+    @items = @user.items.page(params[:page]).reverse_order
   end
 
   def edit
@@ -18,13 +18,13 @@ class UsersController < ApplicationController
 
   def followings
     @user = User.find(params[:id])
-    @users = @user.followings.page(params[:page]).per(5)
+    @users = @user.followings.page(params[:page]).per(20)
     render 'users/followings'
   end
 
   def followers
     @user = User.find(params[:id])
-    @users = @user.followers.page(params[:page]).per(5)
+    @users = @user.followers.page(params[:page]).per(20)
     render 'users/followers'
   end
 
