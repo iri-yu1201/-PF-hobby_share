@@ -1,0 +1,14 @@
+<h2>フォロー一覧</h2>
+<% if @users.exists? %>
+  <table>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= attachment_image_tag user, :image, :fill, 60, 60, format:'jpeg', fallback: "no_image.jpg"%></td>
+      <td><%= user.name %></td>
+      <td><%= link_to "見に行く", user_path(user), class: "btn btn-outline-secondary" %></td>
+    </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>フォローしてる人はいません</p>
+<% end %>
