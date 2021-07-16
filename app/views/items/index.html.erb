@@ -1,23 +1,31 @@
-<div class="container">
-  <table>
-  <% @items.each do |item| %>
-    <tr>
-      <td>
-      <%= link_to user_path(item.user.id) do %>
-        <%= attachment_image_tag item.user, :image, :fill, 70, 70, format:'jpeg', fallback: "no_image.jpg" %><br>
-        <%= item.user.name %>
-      <% end %>
-      </td>
-      <td>
-      <%= link_to item_path(item) do %>
-        <%= item.title %>
-      <% end %><br>
-      <%= item.detail %>
-      </td>
-      <td><%= attachment_image_tag item, :photo, :fill, 200, 150, format:'jpeg' %></td>
-    </tr>
-  <% end %>
-  <%= paginate @items %>
-  </table>
+<div class="container-md">
+  <div class="row">
+    <table class="table">
+    <% @items.each do |item| %>
+      <tr>
+        <td>
+        <%= link_to user_path(item.user.id) do %>
+          <%= attachment_image_tag item.user, :image, :fill, 70, 70, format:'jpeg', fallback: "no_image.jpg" %><br>
+          <div class="icon">
+            <%= item.user.name %>
+          </div>
+        <% end %>
+        </td>
+        <td>
+        <%= link_to item_path(item) do %>
+          <div class="post">
+            <%= item.title %>
+          </div>
+        <% end %><br>
+          <div class="detail">
+            <%= item.detail %>
+          </div>
+        </td>
+        <td><%= attachment_image_tag item, :photo, :fill, 200, 150, format:'jpeg' %></td>
+      </tr>
+    <% end %>
+    <%= paginate @items %>
+    </table>
+  </div>
 </div>
 

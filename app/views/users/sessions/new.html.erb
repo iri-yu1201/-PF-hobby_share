@@ -1,32 +1,42 @@
 <div class="container">
-  <h2>ログイン</h2>
+  <h2 class="title">ログインはこちらから</h2>
   <div class="row">
     <div class="col">
     <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-      <div class="field">
-        <%= f.label :メールアドレス %><br />
+    <div class="row">
+      <div class="col-2 offset-3">
+        <%= f.label :メールアドレス %>
+      </div>
+      <div class="col-3">
         <%= f.email_field :email, autofocus: true %>
       </div>
+    </div>
     
-      <div class="field">
-        <%= f.label :パスワード %><br />
+    <div class="row">
+      <div class="col-2 offset-3">
+        <%= f.label :パスワード %>
+      </div>
+      <div class="col-3">
         <%= f.password_field :password, autocomplete: "current-password" %>
       </div>
+    </div>
     
       <% if devise_mapping.rememberable? %>
-        <div class="field">
+      <div class="row">
+        <div class="col-3 offset-5">
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
+      </div>
       <% end %>
     
       <div class="actions">
         <%= f.submit "ログイン", class: "btn btn-success" %>
       </div>
     <% end %>
-    
-    <%= link_to "新規登録はこちらから", new_user_registration_path, class: "btn btn-primary" %>
-    <%= render "users/shared/links" %>
+      <div class="actions">
+        <%= link_to "新規登録はこちらから", new_user_registration_path, class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
 </div>
