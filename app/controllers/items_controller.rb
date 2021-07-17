@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
   def search
     @items = Item.search(params[:keyword])
     @keyword = params[:keyword]
+    @items = Item.page(params[:page]).reverse_order
     render "index"
   end
 

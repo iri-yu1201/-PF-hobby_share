@@ -128,3 +128,42 @@ body {
   border-top: solid 5px #5d627b;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
+
+.post {
+  font-size: 24px;
+}
+
+.space {
+  margin-top: 30px;
+}
+
+.form {
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 3px #95ccff;
+  border-radius: 8px;
+}
+
+.delete {
+  margin-left: 30px;
+}
+
+.comment {
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.not_exist {
+  text-align: center;
+  font-size: 28px;
+}
+
+.post_name {
+  width: 150px;
+}
+
+.post_detail {
+  width: 400px;
+  margin-right: 10px;
+}

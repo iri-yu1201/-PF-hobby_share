@@ -24,8 +24,9 @@
         <td><%= attachment_image_tag item, :photo, :fill, 200, 150, format:'jpeg' %></td>
       </tr>
     <% end %>
-    <%= paginate @items %>
+    
     </table>
   </div>
+  <%= paginate @items %>
 </div>
 
