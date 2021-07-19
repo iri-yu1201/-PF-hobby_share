@@ -1,5 +1,6 @@
-class Item < ApplicationRecord
+# frozen_string_literal: true
 
+class Item < ApplicationRecord
   attachment :photo
 
   belongs_to :user
@@ -7,7 +8,6 @@ class Item < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   def self.search(keyword)
-    Item.where(["title like? OR detail like?", "%#{keyword}%", "%#{keyword}%"])
+    Item.where(['title like? OR detail like?', "%#{keyword}%", "%#{keyword}%"])
   end
-
 end

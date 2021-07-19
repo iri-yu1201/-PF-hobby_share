@@ -1,41 +1,53 @@
 <div class="container">
-  <h2>新規登録</h2>
+  <h2 class="title">新規登録はこちらから</h2>
   <div class="row">
     <div class="col">
-    
+
     <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
-    
-      <div clas="field">
-        <%= f.label :ハンドルネーム %>
-        <%= f.text_field :name, autofocus: true %>
+      <div class="row">
+        <div class="col-3 offset-3">
+          <%= f.label :ハンドルネーム %>
+        </div>
+        <div class="col-3">
+          <%= f.text_field :name, autofocus: true %>
+        </div>
       </div>
-    
-      <div class="field">
-        <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="row">
+        <div class="col-3 offset-3">
+          <%= f.label :メールアドレス %>
+        </div>
+        <div class="col-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
       </div>
-    
-      <div class="field">
-        <%= f.label :パスワード %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
+      <div class="row">
+        <div class="col-3 offset-3">
+          <%= f.label :パスワード %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> 文字以上 )</em>
+          <% end %>
+        </div>
+        <div class="col-3">
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
       </div>
-    
-      <div class="field">
-        <%= f.label :パスワード確認 %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <div class="row">
+        <div class="col-3 offset-3">
+          <%= f.label :パスワード確認 %>
+        </div>
+        <div class="col-3">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
       </div>
-    
+
       <div class="actions">
         <%= f.submit "ほびシェアをはじめる", class: "btn btn-success"  %>
       </div>
     <% end %>
-    
-    <%= link_to "ログインはこちらから", new_user_session_path, class: "btn btn-primary" %>
-    <%= render "users/shared/links" %>
+      <div class="actions">
+        <%= link_to "ログインはこちらから", new_user_session_path, class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
 </div>

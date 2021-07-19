@@ -1,5 +1,11 @@
-<% if current_user.already_favo?(item) %>
-  <%= link_to "いいねを外す", item_favorites_path(item), method: :delete, remote: true %>
-<% else %>
-  <%= link_to "いいね", item_favorites_path(item), method: :post, remote: true %>
-<% end %>
+<div class="favo">
+  <% if current_user.already_favo?(item) %>
+    <%= link_to item_favorites_path(item), method: :delete, remote: true, class: "btn btn-danger" do %>
+      <i class="fas fa-thumbs-up">いいねを外す</i>
+    <% end %>
+  <% else %>
+    <%= link_to item_favorites_path(item), method: :post, remote: true, class: "btn btn-light" do %>
+      <i class="fas fa-thumbs-up">いいね</i>
+    <% end %>
+  <% end %>
+</div>
