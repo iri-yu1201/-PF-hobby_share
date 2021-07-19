@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   
   validates :title, presence: true
   validates :detail, presence: true
-  validates :photo, presence: true
+
 
   def self.search(keyword)
     Item.where(['title like? OR detail like?', "%#{keyword}%", "%#{keyword}%"])

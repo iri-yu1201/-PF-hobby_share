@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="col">
-      <%= attachment_image_tag @item, :photo, :fill, 400, 300, format:'jpeg' %>
+      <%= attachment_image_tag @item, :photo, :fill, 400, 300, format:'jpeg', fallback: "no_photo.jpg" %>
     </div>
   </div>
   <div class="delete">
