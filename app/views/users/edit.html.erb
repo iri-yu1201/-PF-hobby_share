@@ -1,19 +1,36 @@
-<h1>プロフィールを変更</h1>
+<div class="container">
+  <h2 class="title">プロフィールを変更</h2>
 
-<%= form_with model: @user, local:true do |f| %>
-  <table>
-    <tr>
-      <td>プロフィール画像</td>
-      <td><%= f.attachment_field :image %></td>
-    </tr>
-    <tr>
-      <td>ハンドルネーム</td>
-      <td><%= f.text_field :name %></td>
-    </tr>
-    <tr>
-      <td>自己紹介</td>
-      <td><%= f.text_area :introduction %></td>
-    </tr>
-  </table>
-  <%= f.submit "保存する", class: "btn btn-success" %>
-<% end %>
+  
+  <%= form_with model: @user, local:true do |f| %>
+  <div class="row">
+    <div class="col-3 offset-1">
+      <p>プロフィール画像</p>
+    </div>
+    <div class="col-3">
+      <%= f.attachment_field :image %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 offset-1">
+      <p>ハンドルネーム</p>
+    </div>
+    <div class="col-3">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 offset-1">
+      <p>自己紹介</p>
+    </div>
+    <div class="col-3">
+      <%= f.text_area :introduction, size: "50×10" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 offset-4">
+    <%= f.submit "保存する", class: "btn btn-success" %>
+    </div>
+  </div>
+  <% end %>
+</div>

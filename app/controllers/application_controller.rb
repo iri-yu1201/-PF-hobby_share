@@ -3,12 +3,12 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def after_signed_up_path_for(resource)
-    user_path(resource)
+  def after_sign_up_path_for(resource)
+    user_path(current_user)
   end
 
-  def after_signed_in_path_for(resource)
-    user_path(resource)
+  def after_sign_in_path_for(resource)
+    user_path(current_user)
   end
 
   protected

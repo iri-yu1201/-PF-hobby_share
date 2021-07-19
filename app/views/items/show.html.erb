@@ -1,39 +1,52 @@
+<div class="space"></div>
 <div class="container">
-  <div>
-    <%= attachment_image_tag @item.user, :image, :fill, 100, 100, format:'jpeg', fallback: "no_image.jpg" %>
-    <%= @item.user.name %>
-  </div>
+  <div class="row">
+    <div class="col-2">
+      <div>
+        <%= attachment_image_tag @item.user, :image, :fill, 100, 100, format:'jpeg', fallback: "no_image.jpg" %>
+      </div>
+      <div class="icon">
+        <%= @item.user.name %>
+      </div>
+    </div>
 
-  <div>
-    <%= @item.title %>
-    <%= @item.detail %>
-    <%= attachment_image_tag @item, :photo, :fill, 400, 300, format:'jpeg' %>
+    <div class="col-5">
+      <div class="post">
+        <%= @item.title %>
+      </div><br>
+      <div>
+        <%= @item.detail %>
+      </div>
+    </div>
+    <div class="col">
+      <%= attachment_image_tag @item, :photo, :fill, 400, 300, format:'jpeg', fallback: "no_photo.jpg" %>
+    </div>
   </div>
-  <div>
+  <div class="delete">
     <% if current_user.id == @item.user_id %>
       <%= link_to "投稿を消す", item_path(@item), method: :delete, class: "btn btn-danger" %>
     <% end %>
   </div>
-
-  <div>
-    <ul>
-      <li class="comment-list">
-        <h4>コメント</h4>
-      </li>
-      <li id="comments_area">
-        <%= render partial: 'item_comments/index', locals: { item_comments: @comments } %>
-      </li>
-    </ul>
-    <% if user_signed_in? %>
-      <div class="comment_form">
-        <p>コメントする</p>
-        <%= render partial: 'item_comments/form', locals: { item_comment: @comment, item: @item } %>
+  <div class="row">
+    <div class="col-10">
+      <div class="comment">
+        <ul>
+          <li class="comment-list">
+            <h4>コメント</h4>
+          </li>
+          <li id="comments_area">
+            <%= render partial: 'item_comments/index', locals: { item_comments: @comments } %>
+          </li>
+        </ul>
+        <% if user_signed_in? %>
+          <div class="comment_form">
+            <p>コメントする</p>
+            <%= render partial: 'item_comments/form', locals: { item_comment: @comment, item: @item } %>
+          </div>
+        <% end %>
+      <div id="favorite_button_<%= @item.id %>">
+        <%= render partial: 'favorites/like', locals: { item: @item } %>
       </div>
-    <% end %>
+    </div>
   </div>
-
-  <div id="favorite_button_<%= @item.id %>">
-    <%= render partial: 'favorites/like', locals: { item: @item } %>
-  </div>
-
 </div>

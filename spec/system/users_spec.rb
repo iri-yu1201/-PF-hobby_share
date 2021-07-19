@@ -1,4 +1,3 @@
 # frozen_string_literal: true
 
-module ItemCommentsHelper
-end
+require 'rails_helper'
