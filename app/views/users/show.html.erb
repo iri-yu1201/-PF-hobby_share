@@ -51,7 +51,7 @@
             <%= item.detail %>
           </td>
           <td>
-            <%= attachment_image_tag item, :photo, :fill, 200, 150, format:'jpeg' %>
+            <%= attachment_image_tag item, :photo, :fill, 200, 150, format:'jpeg', fallback: "no_photo.jpg" %>
           </td>
         </tr>
         <% end %>

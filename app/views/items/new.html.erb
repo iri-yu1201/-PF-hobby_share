@@ -1,5 +1,11 @@
 <div class="space"></div>
 <div class="container-lg">
+  <% if @item.errors.any? %>
+    <%= @item.errors.count %>件のエラーがあります。<br>
+    <% @item.errors.full_messages.each do |message| %>
+    <%= message %>
+    <% end %>
+  <% end %>
   <div class="row">
     <div class="col-8 offset-2">
     <div class="form">

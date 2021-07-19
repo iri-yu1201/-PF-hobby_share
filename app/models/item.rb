@@ -6,6 +6,10 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many :item_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  
+  validates :title, presence: true
+  validates :detail, presence: true
+
 
   def self.search(keyword)
     Item.where(['title like? OR detail like?', "%#{keyword}%", "%#{keyword}%"])

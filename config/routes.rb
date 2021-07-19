@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   resources :users, only: %i(show edit update) do
     member do
-      get :followings, params: :followers
+      get :followings, :followers
     end
   end
   resources :follows, only: %i(create destroy)
