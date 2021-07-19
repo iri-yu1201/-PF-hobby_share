@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: %i[index search]
+  before_action :authenticate_user!, except: %i(index search)
 
   def new
     @item = Item.new
