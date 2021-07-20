@@ -1,5 +1,5 @@
 <%= item_comments.count %>件のコメント
-<p data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">もっと見る...</p>
+<a data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">もっと見る...</a>
 <% item_comments.first(3).each do |comment| %><!--通常3件まで表示-->
   <% unless comment.id.nil? %>
     <li class="comment-container">

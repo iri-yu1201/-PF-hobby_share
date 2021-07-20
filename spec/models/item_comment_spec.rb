@@ -2,8 +2,10 @@
 
 require 'rails_helper'
 
-describe 'モデルのテスト' do
-  it "有効なコメントの場合は保存されるか" do
-    expect(FactoryBot.build(:item_comment)).to be_valid
+RSpec.describe ItemComment, type: :model  do
+  describe 'ItemCommentモデルに関するテスト' do
+    it "コメントの保存はされるか" do
+      expect(FactoryBot.build(:item_comment)).to be_valid
+    end
   end
 end
