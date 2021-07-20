@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :item do
-    title { Faker::Loerm.characters(number:5) }
-    detail { Faker::Loerm.characters(number:80) }
+    title { Faker::Lorem.characters(number:5) }
+    detail { Faker::Lorem.characters(number:80) }
     photo { Faker::Avatar.image }
-  end 
+    user
+  end
 end

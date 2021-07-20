@@ -1,5 +1,7 @@
 FactoryBot.define do
   factory :item_comment do
-    comment { Faker::Loerm.characters(number:30) }
+    comment { Faker::Lorem.characters(number:30) }
+    user
+    item
   end
 end
